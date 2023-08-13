@@ -9,20 +9,20 @@ const ListingPage = ({ searchResults }) => {
   const { searchQuery } = useSearchContext();
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedGenre, setSelectedGenre] = useState('');
-  const [selectedYear, setSelectedYear] = useState('');
-  const [selectedRating, setSelectedRating] = useState('');
+//   const [selectedYear, setSelectedYear] = useState('');
+//   const [selectedRating, setSelectedRating] = useState('');
 
   const handleGenreChange = (genre) => {
     setSelectedGenre(genre);
   };
 
-  const handleYearChange = (year) => {
-    setSelectedYear(year);
-  };
+//   const handleYearChange = (year) => {
+//     setSelectedYear(year);
+//   };
 
-  const handleRatingChange = (rating) => {
-    setSelectedRating(rating);
-  };
+//   const handleRatingChange = (rating) => {
+//     setSelectedRating(rating);
+//   };
 
 
   const filteredMovies = movies.filter((movie) => {
@@ -33,10 +33,11 @@ const ListingPage = ({ searchResults }) => {
       movie.director.toLowerCase().includes(searchQuery);
 
     const isGenreMatch = selectedGenre ? movie.genre === selectedGenre : true;
-    const isYearMatch = selectedYear ? movie.year === selectedYear : true;
-    const isRatingMatch = selectedRating ? movie.rating === selectedRating : true;
+    // const isYearMatch = selectedYear ? movie.year === selectedYear : true;
+    // const isRatingMatch = selectedRating ? movie.rating === selectedRating : true;
 
-    return isSearchMatch && isGenreMatch && isYearMatch && isRatingMatch;
+    return isSearchMatch && isGenreMatch 
+    // && isYearMatch && isRatingMatch;
   });
 
   const openMovieDetail = (movie) => {
